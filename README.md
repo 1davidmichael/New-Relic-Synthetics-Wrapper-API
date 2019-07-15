@@ -2,6 +2,25 @@
 
 A wrapper around the [New Relic Synthetics API](https://docs.newrelic.com/docs/apis/synthetics-rest-api/monitor-examples/manage-synthetics-monitors-rest-api).
 
+__Monitor Definition:__
+```
+{
+"name": string [required],
+"type": string (SIMPLE, BROWSER, SCRIPT_API, SCRIPT_BROWSER) [required],
+"frequency": integer (minutes) [required, must be one of 1, 5, 10, 15, 30, 60, 360, 720, or 1440],
+"uri": string [required for SIMPLE and BROWSER type],
+"locations": array of strings [at least one required],
+"status": string (ENABLED, MUTED, DISABLED) [required],
+"slaThreshold": double,
+"options": {
+  "validationString": string [only valid for SIMPLE and BROWSER types],
+  "verifySSL": boolean (true, false) [only valid for SIMPLE and BROWSER types],
+  "bypassHEADRequest": boolean (true, false) [only valid for SIMPLE types],
+  "treatRedirectAsFailure": boolean (true, false) [only valid for SIMPLE types]
+  }
+}
+```
+
 ## Examples
 
 ### Create new monitor
