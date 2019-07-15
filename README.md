@@ -1,6 +1,6 @@
 # New Relic Synthetics Wrapper
 
-A wrapper around the New Relic Synthetics API.
+A wrapper around the [New Relic Synthetics API](https://docs.newrelic.com/docs/apis/synthetics-rest-api/monitor-examples/manage-synthetics-monitors-rest-api).
 
 ## Examples
 
