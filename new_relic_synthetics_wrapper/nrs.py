@@ -37,7 +37,7 @@ class SyntheticsMonitor(object):
         self.id = id
         path = f"https://synthetics.newrelic.com/synthetics/api/v3/monitors/{self.id}"
         session.headers['content-type'] = 'application/json'
-        response = session.update(path, json=monitor_payload)
+        response = session.put(path, json=monitor_payload)
 
         if response.status_code == 204:
             return True
